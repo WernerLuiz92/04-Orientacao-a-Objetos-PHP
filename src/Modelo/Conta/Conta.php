@@ -2,7 +2,7 @@
 
 namespace Werner\Banco\Modelo\Conta;
 
-use Werner\Banco\Classes\Modelo\Endereco;
+use Werner\Banco\Modelo\Endereco;
 
     class Conta 
     {
@@ -95,4 +95,5 @@ use Werner\Banco\Classes\Modelo\Endereco;
             $numero = self::getNumeroDeContas();
             return $numero;
         }
+
     }

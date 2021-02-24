@@ -2,9 +2,9 @@
 
 namespace Werner\Banco\Modelo\Conta;
 
-use Werner\Banco\Classes\Modelo\Pessoa;
-use Werner\Banco\Classes\Modelo\Endereco;
-use Werner\Banco\Classes\Modelo\Cpf;
+use Werner\Banco\Modelo\Pessoa;
+use Werner\Banco\Modelo\Endereco;
+use Werner\Banco\Modelo\Cpf;
 
     class Titular extends Pessoa
     {

@@ -1,9 +1,9 @@
 <?php
 
-    use Werner\Banco\Classes\Modelo\Conta\Conta;
-    use Werner\Banco\Classes\Modelo\Conta\Titular;
-    use Werner\Banco\Classes\Modelo\Endereco;
-    use Werner\Banco\Classes\Modelo\Cpf;
+    use Werner\Banco\Modelo\Conta\Conta;
+    use Werner\Banco\Modelo\Conta\Titular;
+    use Werner\Banco\Modelo\Cpf;
+    use Werner\Banco\Modelo\Endereco;
 
     require_once 'autoload.php';
 
