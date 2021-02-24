@@ -1,7 +1,5 @@
 <?php
 
-    namespace Werner\Banco;
-
     use Werner\Banco\Classes\Modelo\Conta\Conta;
     use Werner\Banco\Classes\Modelo\Conta\Titular;
     use Werner\Banco\Classes\Modelo\Endereco;
