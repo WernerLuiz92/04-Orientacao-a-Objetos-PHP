@@ -7,12 +7,7 @@ use Werner\Banco\Classes\Modelo\Conta\Titular;
 use Werner\Banco\Classes\Modelo\Endereco;
 use Werner\Banco\Classes\Modelo\Cpf;
 
-    require 'src/Classes/Modelo/Pessoa.php';
-    require 'src/Classes/Modelo/Cpf.php';
-    require 'src/Classes/Modelo/Endereco.php';
-    require 'src/Classes/Modelo/Conta/Titular.php';
-    require 'src/Classes/Modelo/Conta/Conta.php';
-
+require_once 'autoload.php';
 
     $cliente1 = new Titular(new Cpf("183.543.930-62"), "Rita Cecília Martins", new Endereco("Ijuí", "Morada do Sol", "Osvaldo Rieck", "79"));
     $cliente2 = new Titular(new Cpf("378.890.090-38"), "Ana Stefany Cavalcanti", new Endereco("Ijuí", "Centro", "Dr. Pestana", "875"));
@@ -30,6 +25,9 @@ use Werner\Banco\Classes\Modelo\Cpf;
     /*echo "<pre>";
     var_dump($contas);
     echo "</pre>";*/
+
+    $conta1->depositar(1000);
+    $conta1->sacar(100);
 
 ?>
 <!DOCTYPE html>

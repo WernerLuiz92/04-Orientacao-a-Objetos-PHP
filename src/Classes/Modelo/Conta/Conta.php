@@ -46,19 +46,21 @@ use Werner\Banco\Classes\Modelo\Endereco;
             return $this->titular->getEndereco();
         }
 
-        public function saca(float $valorASacar): void
+        public function sacar(float $valorASacar): void
         {
-            if ($valorASacar > $this->saldo) {
+            $tarifaSaque = $valorASacar * 0.05;
+            $valorSaque = $valorASacar + $tarifaSaque;
+            if ($valorSaque > $this->saldo) {
                 echo "Saldo insuficiente";
                 return;
             }
 
-            $this->saldo -= $valorASacar;
+            $this->saldo -= $valorSaque;
             echo "Saque realizado com sucesso. Seu saldo atual é de: R$ {$this->saldo} <br>";
             
         }
 
-        public function deposita(float $valorADepositar): void
+        public function depositar(float $valorADepositar): void
         {
             if ($valorADepositar < 0) {
                 echo "O valor a ser depositado deve ser maior do que zero!";
@@ -70,15 +72,15 @@ use Werner\Banco\Classes\Modelo\Endereco;
             
         }
 
-        public function transfere(float $valorATransferir, Conta $contaDestino): void
+        public function transferir(float $valorATransferir, Conta $contaDestino): void
         {
             if ($valorATransferir > $this->saldo) {
                 echo "Saldo insuficiente";
                 return;
             }
 
-            $this->saca($valorATransferir);
-            $contaDestino->deposita($valorATransferir);
+            $this->sacar($valorATransferir);
+            $contaDestino->depositar($valorATransferir);
             echo "Transferencia realizada com sucesso. Seu saldo atual é de: R$ {$this->saldo} <br>";
             
         }
