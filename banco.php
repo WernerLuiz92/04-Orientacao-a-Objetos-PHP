@@ -1,6 +1,7 @@
 <?php
 
     use Werner\Banco\Modelo\Conta\Conta;
+    use Werner\Banco\Modelo\Conta\ContaPoupanca;
     use Werner\Banco\Modelo\Conta\Titular;
     use Werner\Banco\Modelo\Cpf;
     use Werner\Banco\Modelo\Endereco;
@@ -31,7 +32,7 @@
 
     $conta1 = new Conta($cliente1, 0);
     $conta2 = new Conta($cliente2, 0);
-    $conta3 = new Conta($cliente1, 1);
+    $conta3 = new ContaPoupanca($cliente1, 1);
 
     $contas = [
         $conta1,

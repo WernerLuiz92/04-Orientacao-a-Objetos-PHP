@@ -8,7 +8,7 @@ use Werner\Banco\Modelo\Endereco;
     {
         private Titular $titular;
         private string $numero;
-        private float $saldo;
+        protected float $saldo;
         /**
          * @var int $tipo 0 == Conta Corrente; 1 == Poupança
          */
@@ -60,11 +60,8 @@ use Werner\Banco\Modelo\Endereco;
 
         public function sacar(float $valorASacar): void
         {
-            if ($this->tipo === 0) {
-                $tarifaSaque = $valorASacar * 0.05;
-            } else {
-                $tarifaSaque = $valorASacar * 0.03;
-            }
+
+            $tarifaSaque = $valorASacar * 0.05;
             $valorSaque = $valorASacar + $tarifaSaque;
             if ($valorSaque > $this->saldo) {
                 echo "Saldo insuficiente";
