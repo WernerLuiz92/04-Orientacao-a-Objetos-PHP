@@ -1,31 +1,34 @@
-<?php
+<?php 
 
-    class Titular
+namespace Werner\Banco\Classes\Modelo;
+
+
+    class Pessoa
     {
-        private string $nome;
+        protected string $nome;
+        protected Cpf $cpf;
 
-        public function __construct(Cpf $cpf, string $nome)
+        public function __construct(string $nome, Cpf $cpf)
         {
-            
-            $this->cpf = $cpf;
             $this->validaNome($nome);
             $this->nome = $nome;
+            $this->cpf = $cpf;
         }
 
         public function getNome(): string
         {
-            return $this->nome;
-        }
-
-        public function getNumeroCpf(): string
-        {
-            return $this->cpf->getCpf();
+                return $this->nome;
         }
 
         public function setNome($nome): void
         {
             $this->validaNome($nome);
             $this->nome = $nome;
+        }
+
+        public function getCpf(): string
+        {
+                return $this->cpf->getNumeroCpf();
         }
 
         private function validaNome($nome): void
@@ -35,4 +38,5 @@
                 exit();
             }
         }
+
     }

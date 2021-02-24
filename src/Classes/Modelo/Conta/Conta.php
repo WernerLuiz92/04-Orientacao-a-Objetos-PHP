@@ -1,4 +1,8 @@
-<?php
+<?php 
+
+namespace Werner\Banco\Classes\Modelo\Conta;
+
+use Werner\Banco\Classes\Modelo\Endereco;
 
     class Conta 
     {
@@ -35,6 +39,11 @@
         public function getCpfTitular(): string
         {
             return $this->titular->getNumeroCpf();
+        }
+
+        public function getEnderecoTitular(): Endereco
+        {
+            return $this->titular->getEndereco();
         }
 
         public function saca(float $valorASacar): void
