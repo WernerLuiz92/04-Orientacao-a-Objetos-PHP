@@ -1,6 +1,6 @@
 <?php 
 
-namespace Werner\Banco\Classes\Modelo;
+namespace Werner\Banco\Modelo;
 
 
     class Pessoa

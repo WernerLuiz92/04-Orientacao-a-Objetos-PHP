@@ -1,6 +1,6 @@
 <?php 
 
-namespace Werner\Banco\Classes\Modelo\Conta;
+namespace Werner\Banco\Modelo\Conta;
 
 use Werner\Banco\Classes\Modelo\Pessoa;
 use Werner\Banco\Classes\Modelo\Endereco;

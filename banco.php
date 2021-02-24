@@ -1,16 +1,35 @@
 <?php
 
-namespace Werner\Banco;
+    namespace Werner\Banco;
 
-use Werner\Banco\Classes\Modelo\Conta\Conta;
-use Werner\Banco\Classes\Modelo\Conta\Titular;
-use Werner\Banco\Classes\Modelo\Endereco;
-use Werner\Banco\Classes\Modelo\Cpf;
+    use Werner\Banco\Classes\Modelo\Conta\Conta;
+    use Werner\Banco\Classes\Modelo\Conta\Titular;
+    use Werner\Banco\Classes\Modelo\Endereco;
+    use Werner\Banco\Classes\Modelo\Cpf;
 
-require_once 'autoload.php';
+    require_once 'autoload.php';
 
-    $cliente1 = new Titular(new Cpf("183.543.930-62"), "Rita Cecília Martins", new Endereco("Ijuí", "Morada do Sol", "Osvaldo Rieck", "79"));
-    $cliente2 = new Titular(new Cpf("378.890.090-38"), "Ana Stefany Cavalcanti", new Endereco("Ijuí", "Centro", "Dr. Pestana", "875"));
+    $cliente1 = new Titular(
+        new Cpf("183.543.930-62"), 
+        "Rita Cecília Martins", 
+        new Endereco(
+            "Ijuí", 
+            "Morada do Sol", 
+            "Osvaldo Rieck", 
+            "79"
+        )
+    );
+
+    $cliente2 = new Titular(
+        new Cpf("378.890.090-38"), 
+        "Ana Stefany Cavalcanti", 
+        new Endereco(
+            "Ijuí", 
+            "Centro", 
+            "Dr. Pestana", 
+            "875"
+        )
+    );
 
     $conta1 = new Conta($cliente1);
     $conta2 = new Conta($cliente2);
