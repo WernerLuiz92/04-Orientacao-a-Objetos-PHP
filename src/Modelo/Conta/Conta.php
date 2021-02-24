@@ -9,13 +9,20 @@ use Werner\Banco\Modelo\Endereco;
         private Titular $titular;
         private string $numero;
         private float $saldo;
-        private static $numeroDeContas = 1;
+        /**
+         * @var int $tipo 0 == Conta Corrente; 1 == Poupança
+         */
+        private int $tipo;
 
-        public function __construct(Titular $titular)
+        private static $numeroDeContas = 1;
+    
+
+        public function __construct(Titular $titular, int $tipo)
         {
             $this->titular = $titular;
             $this->numero = $this->geraNumeroConta();
             $this->saldo = 0;
+            $this->tipo = $tipo;
 
             self::$numeroDeContas++;
 
@@ -29,6 +36,11 @@ use Werner\Banco\Modelo\Endereco;
         public function getSaldo(): float 
         {
             return $this->saldo;
+        }
+
+        public function getTipo(): int
+        {
+                return $this->tipo;
         }
 
         public function getNomeTitular(): string
@@ -48,7 +60,11 @@ use Werner\Banco\Modelo\Endereco;
 
         public function sacar(float $valorASacar): void
         {
-            $tarifaSaque = $valorASacar * 0.05;
+            if ($this->tipo === 0) {
+                $tarifaSaque = $valorASacar * 0.05;
+            } else {
+                $tarifaSaque = $valorASacar * 0.03;
+            }
             $valorSaque = $valorASacar + $tarifaSaque;
             if ($valorSaque > $this->saldo) {
                 echo "Saldo insuficiente";

@@ -8,7 +8,7 @@
     require_once 'autoload.php';
 
     $cliente1 = new Titular(
-        new Cpf("183.543.930-62"), 
+        new Cpf('087.742.589-23'), 
         "Rita Cecília Martins", 
         new Endereco(
             "Ijuí", 
@@ -29,9 +29,9 @@
         )
     );
 
-    $conta1 = new Conta($cliente1);
-    $conta2 = new Conta($cliente2);
-    $conta3 = new Conta($cliente1);
+    $conta1 = new Conta($cliente1, 0);
+    $conta2 = new Conta($cliente2, 0);
+    $conta3 = new Conta($cliente1, 1);
 
     $contas = [
         $conta1,
@@ -45,6 +45,9 @@
 
     $conta1->depositar(1000);
     $conta1->sacar(100);
+
+    $conta3->depositar(1000);
+    $conta3->sacar(100);
 
 ?>
 <!DOCTYPE html>
