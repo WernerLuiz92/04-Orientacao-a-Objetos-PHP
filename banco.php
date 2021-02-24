@@ -1,11 +1,17 @@
 <?php
 
-    require 'src/Pessoa.php';
-    require 'src/Cpf.php';
-    require 'src/Endereco.php';
-    require 'src/Titular.php';
-    require 'src/Conta.php';
+namespace Werner\Banco;
 
+use Werner\Banco\Classes\Modelo\Conta\Conta;
+use Werner\Banco\Classes\Modelo\Conta\Titular;
+use Werner\Banco\Classes\Modelo\Endereco;
+use Werner\Banco\Classes\Modelo\Cpf;
+
+    require 'src/Classes/Modelo/Pessoa.php';
+    require 'src/Classes/Modelo/Cpf.php';
+    require 'src/Classes/Modelo/Endereco.php';
+    require 'src/Classes/Modelo/Conta/Titular.php';
+    require 'src/Classes/Modelo/Conta/Conta.php';
 
 
     $cliente1 = new Titular(new Cpf("183.543.930-62"), "Rita Cecília Martins", new Endereco("Ijuí", "Morada do Sol", "Osvaldo Rieck", "79"));
