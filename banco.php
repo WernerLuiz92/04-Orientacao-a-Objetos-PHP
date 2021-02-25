@@ -1,10 +1,7 @@
 <?php
 
-    use Werner\Banco\Modelo\Conta\Conta;
-    use Werner\Banco\Modelo\Conta\ContaPoupanca;
-    use Werner\Banco\Modelo\Conta\Titular;
-    use Werner\Banco\Modelo\Cpf;
-    use Werner\Banco\Modelo\Endereco;
+use Werner\Banco\Modelo\Conta\{ContaCorrente, ContaPoupanca, Titular};
+use Werner\Banco\Modelo\{Cpf, Endereco};
 
     require_once 'autoload.php';
 
