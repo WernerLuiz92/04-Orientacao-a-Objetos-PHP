@@ -1,10 +1,7 @@
 <?php
 
 use Werner\Banco\Modelo\Cpf;
-use Werner\Banco\Modelo\Funcionario\Desenvolvedor;
-use Werner\Banco\Modelo\Funcionario\Diretor;
-use Werner\Banco\Modelo\Funcionario\EditorDeVideo;
-use Werner\Banco\Modelo\Funcionario\Gerente;
+use Werner\Banco\Modelo\Funcionario\{Desenvolvedor, Diretor, EditorDeVideo, Gerente};
 use Werner\Banco\Service\ControladorDeBonificacoes;
 
 
@@ -32,4 +29,3 @@ require 'autoload.php';
     }
 
     echo 'Total: '.$controlador->getTotalBonificacoes();
-    
