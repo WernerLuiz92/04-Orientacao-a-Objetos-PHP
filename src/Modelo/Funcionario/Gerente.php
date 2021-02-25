@@ -6,7 +6,7 @@ use Werner\Banco\Modelo\Autenticavel;
 
 class Gerente extends Funcionario implements Autenticavel
 {
-    
+
     public function calculaBonificacao(): float
     {
         return $this->getSalario();
@@ -16,5 +16,4 @@ class Gerente extends Funcionario implements Autenticavel
     {
         return $senha === '4321';
     }
-
 }

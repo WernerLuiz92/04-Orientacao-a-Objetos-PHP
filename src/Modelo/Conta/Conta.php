@@ -1,11 +1,14 @@
-<?php 
+<?php
 
 namespace Werner\Banco\Modelo\Conta;
 
+use Werner\Banco\Modelo\Acessor;
 use Werner\Banco\Modelo\Endereco;
 
-abstract class Conta 
+abstract class Conta
 {
+    use Acessor;
+
     private Titular $titular;
     private string $numero;
     protected float $saldo;
@@ -25,7 +28,6 @@ abstract class Conta
         $this->tipo = $tipo;
 
         self::$numeroDeContas++;
-
     }
 
     public function getNumero(): string
@@ -33,14 +35,14 @@ abstract class Conta
         return $this->numero;
     }
 
-    public function getSaldo(): float 
+    public function getSaldo(): float
     {
         return $this->saldo;
     }
 
     public function getTipo(): int
     {
-            return $this->tipo;
+        return $this->tipo;
     }
 
     public function getNomeTitular(): string
@@ -70,7 +72,6 @@ abstract class Conta
 
         $this->saldo -= $valorSaque;
         echo "Saque realizado com sucesso. Seu saldo atual é de: R$ {$this->saldo} <br>";
-        
     }
 
     public function depositar(float $valorADepositar): void
@@ -82,7 +83,6 @@ abstract class Conta
 
         $this->saldo += $valorADepositar;
         echo "Deposito efetuado com sucesso. Seu saldo atual é de: R$ {$this->saldo} <br>";
-        
     }
 
     public static function getNumeroDeContas(): int
@@ -97,5 +97,4 @@ abstract class Conta
     }
 
     abstract protected function percentualTarifa(): float;
-
 }

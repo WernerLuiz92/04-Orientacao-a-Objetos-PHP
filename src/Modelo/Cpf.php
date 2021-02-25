@@ -1,10 +1,12 @@
-<?php 
+<?php
 
 namespace Werner\Banco\Modelo;
 
 
 final class Cpf
 {
+    use Acessor;
+
     private string $numero;
 
     public function __construct(string $numero)
@@ -22,8 +24,8 @@ final class Cpf
     private function validaCpf($numero): void
     {
         // Extrai somente os números
-        $numero = preg_replace( '/[^0-9]/is', '', $numero );
-            
+        $numero = preg_replace('/[^0-9]/is', '', $numero);
+
         // Verifica se foi informado todos os digitos corretamente
         if (strlen($numero) != 11) {
             echo "CPF Inválido";

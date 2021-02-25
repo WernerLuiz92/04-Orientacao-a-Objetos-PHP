@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 namespace Werner\Banco\Modelo\Funcionario;
 
 use Werner\Banco\Modelo\Cpf;
 use Werner\Banco\Modelo\Pessoa;
+use Werner\Banco\Modelo\Acessor;
 
 
 abstract class Funcionario extends Pessoa
 {
+    use Acessor;
 
     private float $salario;
 
@@ -28,7 +30,7 @@ abstract class Funcionario extends Pessoa
     }
 
     abstract public function calculaBonificacao(): float;
-    
+
     public function recebeAumento(float $valorAumento)
     {
         if ($valorAumento < 0) {
@@ -37,7 +39,5 @@ abstract class Funcionario extends Pessoa
         }
 
         $this->salario += $valorAumento;
-
     }
-
 }
