@@ -27,8 +27,8 @@ use Werner\Banco\Modelo\{Cpf, Endereco};
         )
     );
 
-    $conta1 = new Conta($cliente1, 0);
-    $conta2 = new Conta($cliente2, 0);
+    $conta1 = new ContaCorrente($cliente1, 0);
+    $conta2 = new ContaCorrente($cliente2, 0);
     $conta3 = new ContaPoupanca($cliente1, 1);
 
     $contas = [
@@ -41,11 +41,14 @@ use Werner\Banco\Modelo\{Cpf, Endereco};
     var_dump($contas);
     echo "</pre>";*/
 
-    $conta1->depositar(1000);
-    $conta1->sacar(100);
+    $conta1->depositar(2758);
+    $conta1->sacar(12.7);
 
-    $conta3->depositar(1000);
-    $conta3->sacar(100);
+    $conta2->depositar(150);
+    $conta2->transferir(100, $conta3);
+
+    $conta3->depositar(2758);
+    $conta3->sacar(12.7);
 
 ?>
 <!DOCTYPE html>
