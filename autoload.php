@@ -1,6 +1,6 @@
 <?php
 
-    spl_autoload_register(function (string $className) {
+spl_autoload_register(function (string $className) {
 
     $filePath = str_replace('Werner\\Banco', 'src', $className);
     $filePath = str_replace('\\', DIRECTORY_SEPARATOR, $filePath);
@@ -9,5 +9,4 @@
     if (file_exists($filePath)) {
         require_once $filePath;
     }
-
-    });
+});
