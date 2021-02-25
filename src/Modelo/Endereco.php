@@ -2,9 +2,17 @@
 
 namespace Werner\Banco\Modelo;
 
+        /**
+         * Class Endereco
+         * @package Werner\Banco\Modelo
+         * @property-read string $cidade
+         * @property-read string $rua
+         * @property-read string $bairro
+         * @property-read string $numero
+         */
 
-    class Endereco
-    {
+final class Endereco
+{
         private string $cidade;
         private string $bairro;
         private string $rua;
@@ -59,6 +67,24 @@ namespace Werner\Banco\Modelo;
                 $this->numero = $numero;
         }
 
-        
+        public function __toString(): string
+        {
+                return "{$this->rua}, {$this->numero} - {$this->bairro} <br> {$this->cidade}";
+        }
 
-    }
+        public function __get(string $nomeAtributo)
+        {
+
+                $metodo = 'get' . ucfirst($nomeAtributo);
+                return $this->$metodo();  
+
+        }
+
+        public function __set($nomeAtributo, $valor)
+        {
+                $metodo = 'set' . ucfirst($nomeAtributo);
+                $this->$metodo($valor);
+                
+        }
+
+}
