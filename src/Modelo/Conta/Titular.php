@@ -2,11 +2,12 @@
 
 namespace Werner\Banco\Modelo\Conta;
 
+use Werner\Banco\Modelo\Autenticavel;
 use Werner\Banco\Modelo\Pessoa;
 use Werner\Banco\Modelo\Endereco;
 use Werner\Banco\Modelo\Cpf;
 
-    class Titular extends Pessoa
+    class Titular extends Pessoa implements Autenticavel
     {
 
         private Endereco $endereco;
@@ -25,6 +26,11 @@ use Werner\Banco\Modelo\Cpf;
         public function getEndereco(): Endereco
         {
             return $this->endereco;
+        }
+
+        public function podeAutenticar(string $senha): bool
+        {
+            return $senha === '0000';
         }
 
     }

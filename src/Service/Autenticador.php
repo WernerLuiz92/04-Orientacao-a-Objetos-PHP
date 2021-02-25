@@ -2,14 +2,14 @@
 
 namespace Werner\Banco\Service;
 
-use Werner\Banco\Modelo\Funcionario\Diretor;
+use Werner\Banco\Modelo\Autenticavel;
 
 class Autenticador
 {
-    public function tryLogin(Diretor $diretor, string $senha)
+    public function tryLogin(Autenticavel $autenticavel, string $senha)
     {
 
-        if (!$diretor->podeAutenticar($senha)) {
+        if (!$autenticavel->podeAutenticar($senha)) {
             echo "Senha incorreta";
             return;
         }
